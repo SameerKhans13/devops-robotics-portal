@@ -2,7 +2,10 @@
 
 A **production-grade fullstack application** for managing a Robotics Lab — members, projects, expenses, vendors, and purchase orders. Built with a modern DevOps stack.
 
+> 📄 **Live Implementation & Grading Evidence Report:** See [IMPLEMENTATION_EVIDENCE.md](IMPLEMENTATION_EVIDENCE.md) for full module-by-module verification proofs (M1–M10) mapped to `grading.md`.
+
 ## 🏗️ Tech Stack
+
 
 | Layer | Technology |
 |-------|-----------|
