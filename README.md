@@ -145,6 +145,44 @@ lab_projects ─── purchase_orders ──── vendors          │
                                  └─── lab_members ─────┘
 ```
 
+## 📸 Application & Observability Showcase
+
+### 1. Operations Command Center (Dashboard)
+Centralized monitoring of research initiatives, active hardware allocations, budget tracking, and real-time telemetry.
+
+![Robotics Lab Dashboard](docs/screenshots/dashboard.png)
+
+### 2. Robotics Project Catalog & Allocation
+Project tracking with budget consumption metrics and deployment status.
+
+![Lab Projects](docs/screenshots/projects.png)
+
+### 3. Interactive Project Creation & Validation
+Modal dialog with real-time schema validation and date formatting.
+
+![New Project Modal](docs/screenshots/new_project_modal.png)
+
+### 4. Prometheus Monitoring Targets (100% UP)
+Active health checks scraping microservice telemetry endpoints at `/metrics`.
+
+![Prometheus Targets](docs/screenshots/prometheus_targets.png)
+
+### 5. Grafana Real-Time Observability Dashboard
+Live metrics dashboard rendering FastAPI HTTP request throughput (RPS), p95 response latencies, and service telemetry.
+
+![Grafana Dashboard](docs/screenshots/grafana_dashboard.png)
+
+---
+
+## 🛡️ DevSecOps & Security Vulnerability Scanning
+
+Container security is continuously audited via **Trivy** integrated into the GitHub Actions CI/CD workflow:
+- **Scan Strategy:** Every push to `main` scans both the backend and frontend OCI container images.
+- **Enforcement Policy:** The pipeline is configured with `exit-code: "1"` for `HIGH` or `CRITICAL` severity vulnerabilities, preventing vulnerable images from being deployed to production.
+- **Base Image Hardening:** Multi-stage builds utilize minimal base images (`python:3.12-slim` and `nginx:alpine`) executing under non-root unprivileged users (`10001` and `nginx`) with locked package pins to guarantee zero exploitable critical CVEs in production artifacts.
+
+---
+
 ## 📁 Project Structure
 
 ```
@@ -157,30 +195,19 @@ devops-robotics-portal/
 │   │   ├── database.py      # DB connection
 │   │   ├── config.py        # Settings
 │   │   └── routers/         # Route handlers
-│   │       ├── members.py
-│   │       ├── projects.py
-│   │       ├── vendors.py
-│   │       ├── expenses.py
-│   │       └── purchases.py
 │   ├── tests/
 │   │   └── test_main.py     # Pytest tests
 │   ├── alembic/             # DB migrations
 │   ├── Dockerfile
 │   └── requirements.txt
 ├── frontend/
-│   ├── src/
-│   │   ├── App.jsx          # Router + sidebar
-│   │   ├── api.js           # API client
-│   │   ├── pages/
-│   │   │   ├── Dashboard.jsx
-│   │   │   ├── Members.jsx
-│   │   │   ├── Projects.jsx
-│   │   │   ├── Expenses.jsx
-│   │   │   ├── Purchases.jsx
-│   │   │   └── Vendors.jsx
-│   │   └── index.css        # Tailwind + custom
+│   ├── src/                 # React 18 + Tailwind UI
 │   ├── Dockerfile
 │   └── nginx.conf
-├── docker-compose.yml
-└── .github/workflows/ci.yml
+├── terraform/               # AWS EKS, VPC, Subnets & Node Groups
+├── helm/                    # Kubernetes Helm v2 Charts with PostgreSQL
+├── monitoring/              # Prometheus Scrape Config & Grafana Dashboards
+├── docker-compose.yml       # Full local stack (App + DB + Prometheus + Grafana)
+└── .github/workflows/ci.yml # CI/CD with Pytest, Docker build, GHCR, & Trivy
 ```
+

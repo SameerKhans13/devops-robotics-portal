@@ -11,6 +11,6 @@ node_modules/
 *.tfstate
 *.tfstate.*
 .terraform.lock.hcl
-*.lock.info
 set-env.ps1
 screenshots/
+!docs/screenshots/
