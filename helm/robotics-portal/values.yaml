@@ -1,0 +1,63 @@
+replicaCount: 2
+
+frontend:
+  image:
+    repository: ghcr.io/sameerkhans13/robotics-lab-portal-frontend
+    tag: latest
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 80
+  resources:
+    limits:
+      cpu: 200m
+      memory: 256Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+backend:
+  image:
+    repository: ghcr.io/sameerkhans13/robotics-lab-portal-backend
+    tag: latest
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 8000
+  env:
+    DATABASE_URL: "postgresql+psycopg://roboticslab:roboticslab@postgres-service:5432/roboticslab"
+    APP_NAME: "Robotics Lab Portal"
+  resources:
+    limits:
+      cpu: 300m
+      memory: 512Mi
+    requests:
+      cpu: 150m
+      memory: 256Mi
+
+postgres:
+  enabled: true
+  image: postgres:16-alpine
+  service:
+    port: 5432
+  persistence:
+    size: 5Gi
+
+ingress:
+  enabled: true
+  className: "nginx"
+  hosts:
+    - host: portal.roboticslab.internal
+      paths:
+        - path: /
+          pathType: Prefix
+          service: frontend
+        - path: /api
+          pathType: Prefix
+          service: backend
+        - path: /health
+          pathType: Prefix
+          service: backend
+        - path: /metrics
+          pathType: Prefix
+          service: backend

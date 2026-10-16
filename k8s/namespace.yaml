@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: robotics-lab
+  labels:
+    app.kubernetes.io/name: robotics-lab-portal
+    environment: production
