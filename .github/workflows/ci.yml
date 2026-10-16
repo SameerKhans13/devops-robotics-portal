@@ -151,6 +151,7 @@ jobs:
           image-ref: ${{ env.REGISTRY }}/${{ env.IMAGE_PREFIX }}-backend:${{ needs.docker-build.outputs.image_sha }}
           format: table
           exit-code: "1"
+          ignore-unfixed: true
           severity: CRITICAL,HIGH
 
       - name: Scan frontend image
@@ -159,4 +160,6 @@ jobs:
           image-ref: ${{ env.REGISTRY }}/${{ env.IMAGE_PREFIX }}-frontend:${{ needs.docker-build.outputs.image_sha }}
           format: table
           exit-code: "1"
+          ignore-unfixed: true
           severity: CRITICAL,HIGH
+

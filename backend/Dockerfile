@@ -1,9 +1,9 @@
-FROM python:3.12-slim
+FROM python:3.12-alpine
 WORKDIR /app
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
-RUN apt-get update && apt-get install -y --no-install-recommends curl && rm -rf /var/lib/apt/lists/*
+RUN apk update && apk upgrade && apk add --no-cache curl gcc musl-dev libpq-dev
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt && useradd --create-home --uid 10001 appuser
+RUN pip install --no-cache-dir -r requirements.txt && adduser -D -u 10001 appuser
 COPY alembic.ini ./
 COPY alembic ./alembic
 COPY app ./app
