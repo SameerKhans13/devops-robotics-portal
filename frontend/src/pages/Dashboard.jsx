@@ -6,20 +6,24 @@ import {
 } from 'lucide-react'
 
 const StatCard = ({ label, value, icon: Icon, color, subtitle, trend }) => (
-  <div className="stat-card">
+  <div className="stat-card group">
     <div className="flex items-start justify-between">
       <div>
-        <p className="text-xs font-medium text-slate-400 uppercase tracking-wider font-mono mb-1.5">{label}</p>
-        <p className="text-2xl font-bold text-white tracking-tight">{value}</p>
+        <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-widest font-mono mb-2">{label}</p>
+        <p className="text-3xl font-extrabold text-white tracking-tight">{value}</p>
         {subtitle && (
-          <p className="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
-            {trend && <span className="text-emerald-400 font-medium">{trend}</span>}
-            <span>{subtitle}</span>
+          <p className="text-xs text-slate-400 mt-2 flex items-center gap-2">
+            {trend && (
+              <span className="text-emerald-400 font-semibold bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20 text-[11px]">
+                {trend}
+              </span>
+            )}
+            <span className="text-slate-400">{subtitle}</span>
           </p>
         )}
       </div>
-      <div className={`w-10 h-10 rounded-lg flex items-center justify-center bg-slate-800/80 border border-slate-700/50 ${color || 'text-slate-300'}`}>
-        <Icon className="w-5 h-5" />
+      <div className={`w-12 h-12 rounded-2xl flex items-center justify-center bg-slate-900/90 border border-slate-700/60 shadow-inner group-hover:scale-105 transition-all duration-200 ${color || 'text-slate-300'}`}>
+        <Icon className="w-6 h-6 transition-transform group-hover:rotate-6" />
       </div>
     </div>
   </div>
