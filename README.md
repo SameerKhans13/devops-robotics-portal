@@ -3,7 +3,8 @@
 A **production-grade fullstack application** for managing a Robotics Lab — members, projects, expenses, vendors, and purchase orders. Built with a modern DevOps stack.
 
 > 📘 **DevOps Capstone Project Report:** See [PROJECT_REPORT.md](PROJECT_REPORT.md) for the comprehensive architecture documentation, cloud provisioning, and operational evidence.  
-> 📊 **Presentation Deck:** [Google Slides Online Presentation](https://docs.google.com/presentation/d/1EH1rWawI3flJD3L58u2sy2gLXkBUPNWU/edit?usp=drive_link&ouid=103800578670485055643&rtpof=true&sd=true) | Interactive Web: [presentation.html](presentation.html) | Local PowerPoint: [robotics_portal_devops_presentation.pptx](robotics_portal_devops_presentation.pptx).
+> 🎥 **Demo & Presentation Walkthrough:** See [`demo/`](demo/) for the slide deck and presentation video assets.  
+> 📊 **Presentation Deck:** [Google Slides Online](https://docs.google.com/presentation/d/1EH1rWawI3flJD3L58u2sy2gLXkBUPNWU/edit?usp=drive_link&ouid=103800578670485055643&rtpof=true&sd=true) | Local Deck: [`demo/presentation.pptx`](demo/presentation.pptx) | Interactive Web: [presentation.html](presentation.html).
 
 
 ## 🏗️ Tech Stack
