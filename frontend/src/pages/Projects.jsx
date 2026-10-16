@@ -105,26 +105,26 @@ export default function Projects() {
             const pct = p.budget > 0 ? Math.min(Math.round((p.spent / p.budget) * 100), 100) : 0
             const overBudget = p.budget > 0 && p.spent > p.budget
             return (
-              <div key={p.id} className="card flex flex-col justify-between hover:border-slate-700/80 transition-all group">
+              <div key={p.id} className="card flex flex-col justify-between hover:border-sky-300 transition-all group shadow-sm hover:shadow-md">
                 <div>
                   <div className="flex items-start justify-between gap-2 mb-2">
-                    <h3 className="text-base font-semibold text-white tracking-tight leading-snug">{p.name}</h3>
+                    <h3 className="text-base font-bold text-slate-900 tracking-tight leading-snug">{p.name}</h3>
                     <span className={statusBadge(p.status)}>{p.status.replace('_', ' ')}</span>
                   </div>
                   {p.description && (
-                    <p className="text-slate-400 text-xs mb-5 line-clamp-2 leading-relaxed">{p.description}</p>
+                    <p className="text-slate-500 text-xs mb-5 line-clamp-2 leading-relaxed">{p.description}</p>
                   )}
                 </div>
 
-                <div className="space-y-4 pt-3 border-t border-canvas-border">
+                <div className="space-y-4 pt-3 border-t border-slate-100">
                   <div>
                     <div className="flex justify-between items-center text-xs mb-1.5">
-                      <span className="text-slate-400 font-medium">Budget Consumed ({pct}%)</span>
-                      <span className={`font-mono font-medium ${overBudget ? 'text-rose-400' : 'text-slate-200'}`}>
+                      <span className="text-slate-500 font-medium">Budget Consumed ({pct}%)</span>
+                      <span className={`font-mono font-bold ${overBudget ? 'text-rose-600' : 'text-slate-800'}`}>
                         {fmt(p.spent)} / {fmt(p.budget)}
                       </span>
                     </div>
-                    <div className="h-2 bg-slate-900 rounded-full overflow-hidden p-0.5 border border-slate-800">
+                    <div className="h-2 bg-slate-100 rounded-full overflow-hidden p-0.5 border border-slate-200">
                       <div
                         className={`h-full rounded-full transition-all duration-300 ${overBudget ? 'bg-rose-500' : 'bg-sky-500'}`}
                         style={{ width: `${pct}%` }}
@@ -132,16 +132,16 @@ export default function Projects() {
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between text-xs text-slate-400 pt-1">
+                  <div className="flex items-center justify-between text-xs text-slate-500 pt-1">
                     <span className="flex items-center gap-1 font-mono">
-                      <Calendar className="w-3.5 h-3.5 text-slate-500" />
+                      <Calendar className="w-3.5 h-3.5 text-slate-400" />
                       {p.start_date ? p.start_date.slice(0, 10) : 'Ongoing'}
                     </span>
                     <div className="flex items-center gap-1">
-                      <button onClick={() => openEdit(p)} className="p-1.5 rounded hover:bg-slate-700 text-slate-400 hover:text-slate-200 transition-colors">
+                      <button onClick={() => openEdit(p)} className="p-1.5 rounded-lg hover:bg-slate-100 text-slate-500 hover:text-slate-800 transition-colors">
                         <Pencil className="w-3.5 h-3.5" />
                       </button>
-                      <button onClick={() => handleDelete(p.id)} className="p-1.5 rounded hover:bg-rose-500/10 text-slate-400 hover:text-rose-400 transition-colors">
+                      <button onClick={() => handleDelete(p.id)} className="p-1.5 rounded-lg hover:bg-rose-50 text-slate-400 hover:text-rose-600 transition-colors">
                         <Trash2 className="w-3.5 h-3.5" />
                       </button>
                     </div>

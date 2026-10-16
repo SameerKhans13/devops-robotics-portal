@@ -109,15 +109,15 @@ export default function Members() {
         <div className="overflow-x-auto">
           <table className="w-full text-left">
             <thead>
-              <tr className="border-b border-canvas-border bg-slate-900/60">
+              <tr className="border-b border-slate-200 bg-slate-50/80">
                 {['Member', 'Role', 'Department', 'Contact', 'Status', ''].map(h => (
-                  <th key={h} className="px-5 py-3 text-xs font-medium text-slate-400 uppercase tracking-wider font-mono">
+                  <th key={h} className="px-5 py-3 text-xs font-semibold text-slate-500 uppercase tracking-wider font-mono">
                     {h}
                   </th>
                 ))}
               </tr>
             </thead>
-            <tbody className="divide-y divide-canvas-border">
+            <tbody className="divide-y divide-slate-100">
               {loading ? (
                 <tr><td colSpan={6} className="text-center py-12 text-slate-500 font-mono text-sm">Loading personnel...</td></tr>
               ) : filtered.length === 0 ? (
@@ -126,13 +126,13 @@ export default function Members() {
                 <tr key={m.id} className="table-row">
                   <td className="px-5 py-3.5">
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-full bg-slate-800 border border-slate-700/80 flex items-center justify-center text-sky-400 font-semibold text-sm">
+                      <div className="w-9 h-9 rounded-full bg-sky-100 border border-sky-200 flex items-center justify-center text-sky-700 font-bold text-sm">
                         {m.name.charAt(0)}
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-white">{m.name}</p>
-                        <p className="text-xs text-slate-400 font-mono flex items-center gap-1.5 mt-0.5">
-                          <Mail className="w-3 h-3 text-slate-500" /> {m.email}
+                        <p className="text-sm font-semibold text-slate-900">{m.name}</p>
+                        <p className="text-xs text-slate-500 font-mono flex items-center gap-1.5 mt-0.5">
+                          <Mail className="w-3 h-3 text-slate-400" /> {m.email}
                         </p>
                       </div>
                     </div>
@@ -140,9 +140,9 @@ export default function Members() {
                   <td className="px-5 py-3.5">
                     <span className={roleBadge(m.role)}>{m.role}</span>
                   </td>
-                  <td className="px-5 py-3.5 text-sm text-slate-300">
+                  <td className="px-5 py-3.5 text-sm text-slate-700">
                     <div className="flex items-center gap-1.5">
-                      <Building className="w-3.5 h-3.5 text-slate-500" />
+                      <Building className="w-3.5 h-3.5 text-slate-400" />
                       {m.department || 'General Robotics'}
                     </div>
                   </td>

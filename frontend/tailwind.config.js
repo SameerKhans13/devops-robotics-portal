@@ -5,12 +5,12 @@ export default {
     extend: {
       colors: {
         canvas: {
-          darkest: '#090d16',
-          dark: '#0e1526',
-          card: '#131b2e',
-          cardHover: '#18233c',
-          border: 'rgba(255, 255, 255, 0.08)',
-          borderSubtle: 'rgba(255, 255, 255, 0.04)',
+          darkest: '#f8fafc',
+          dark: '#f1f5f9',
+          card: '#ffffff',
+          cardHover: '#f8fafc',
+          border: '#e2e8f0',
+          borderSubtle: '#f1f5f9',
         },
         brand: {
           blue: '#38bdf8',
