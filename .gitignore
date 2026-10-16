@@ -7,3 +7,10 @@ __pycache__/
 .pytest_cache/
 dist/
 node_modules/
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+*.lock.info
+set-env.ps1
+screenshots/

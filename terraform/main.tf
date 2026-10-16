@@ -155,6 +155,7 @@ resource "aws_eks_node_group" "robotics_nodes" {
   node_role_arn   = aws_iam_role.node_role.arn
   subnet_ids      = [aws_subnet.public_subnet_1.id, aws_subnet.public_subnet_2.id]
   instance_types  = [var.node_instance_type]
+  ami_type        = "AL2023_x86_64_STANDARD"
 
   scaling_config {
     desired_size = 2
