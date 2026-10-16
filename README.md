@@ -150,37 +150,38 @@ lab_projects ─── purchase_orders ──── vendors          │
 ### 1. Operations Command Center (Dashboard)
 Centralized monitoring of research initiatives, active hardware allocations, budget tracking, and real-time telemetry.
 
-![Robotics Lab Dashboard](docs/screenshots/dashboard.png)
+![Robotics Lab Dashboard](screenshots/dashboard.png)
 
 ### 2. Robotics Project Catalog & Allocation
 Project tracking with budget consumption metrics and deployment status.
 
-![Lab Projects](docs/screenshots/projects.png)
+![Lab Projects](screenshots/projects.png)
 
 ### 3. Interactive Project Creation & Validation
 Modal dialog with real-time schema validation and date formatting.
 
-![New Project Modal](docs/screenshots/new_project_modal.png)
+![New Project Modal](screenshots/new_project_modal.png)
 
 ### 4. Lab Personnel & Research Members Directory
 Role allocation, access permissions, and departmental assignments.
 
-![Lab Members](docs/screenshots/members.png)
+![Lab Members](screenshots/members.png)
 
 ### 5. Procurement & Purchase Orders
 Vendor management, hardware procurement orders, and budget execution workflows.
 
-![Purchase Orders](docs/screenshots/purchases.png)
+![Purchase Orders](screenshots/purchases.png)
 
 ### 6. Prometheus Monitoring Targets (100% UP)
 Active health checks scraping microservice telemetry endpoints at `/metrics`.
 
-![Prometheus Targets](docs/screenshots/prometheus_targets.png)
+![Prometheus Targets](screenshots/prometheus_targets.png)
 
 ### 7. Grafana Real-Time Observability Dashboard
 Live metrics dashboard rendering FastAPI HTTP request throughput (RPS), p95 response latencies, and service telemetry.
 
-![Grafana Dashboard](docs/screenshots/grafana_dashboard.png)
+![Grafana Dashboard](screenshots/grafana_dashboard.png)
+
 
 
 ---
