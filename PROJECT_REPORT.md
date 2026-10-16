@@ -1,10 +1,12 @@
 # DevOps Capstone Project Report
 ## Autonomous Robotics Lab Operations Portal
 
-**Student / Engineer:** Sameer Khan  
+**Student / Engineer:** Sameer Khan S (Roll Number: 24BC10245)  
 **Repository:** [github.com/SameerKhans13/devops-robotics-portal](https://github.com/SameerKhans13/devops-robotics-portal)  
 **Branch:** `main`  
+**Presentation Deck:** [Google Slides Online Presentation](https://docs.google.com/presentation/d/1EH1rWawI3flJD3L58u2sy2gLXkBUPNWU/edit?usp=drive_link&ouid=103800578670485055643&rtpof=true&sd=true)  
 **System Architecture:** Cloud-Native Microservices (FastAPI + React 18 + PostgreSQL + Helm + EKS + Prometheus/Grafana)  
+
 
 ---
 
