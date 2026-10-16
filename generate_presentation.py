@@ -82,12 +82,13 @@ def build_advanced_deck():
     p_div.space_before = Pt(18)
 
     p_cand = tf1.add_paragraph()
-    p_cand.text = "Candidate: Sameer Khan S\nRoll Number: 24BC10245\nTarget Score: 100 / 100 Points (S+ Distinction)\nRepository: github.com/SameerKhans13/devops-robotics-portal"
+    p_cand.text = "Candidate: Sameer Khan S\nRoll Number: 24BC10245\nProgram: DevOps & Cloud Engineering Capstone\nRepository: github.com/SameerKhans13/devops-robotics-portal"
     p_cand.font.size = Pt(10.5)
     p_cand.font.bold = True
     p_cand.font.color.rgb = C_DARK
     p_cand.font.name = "Arial"
     p_cand.space_before = Pt(4)
+
 
     # Right Image Frame for Slide 1
     right_frame = slide1.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(6.8), Inches(0.8), Inches(5.733), Inches(5.9))
