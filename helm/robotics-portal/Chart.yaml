@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: v2
 name: robotics-portal
 description: Helm chart for Robotics Lab Portal (React frontend, FastAPI backend, PostgreSQL)
 type: application
