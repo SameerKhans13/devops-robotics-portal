@@ -162,15 +162,26 @@ Modal dialog with real-time schema validation and date formatting.
 
 ![New Project Modal](docs/screenshots/new_project_modal.png)
 
-### 4. Prometheus Monitoring Targets (100% UP)
+### 4. Lab Personnel & Research Members Directory
+Role allocation, access permissions, and departmental assignments.
+
+![Lab Members](docs/screenshots/members.png)
+
+### 5. Procurement & Purchase Orders
+Vendor management, hardware procurement orders, and budget execution workflows.
+
+![Purchase Orders](docs/screenshots/purchases.png)
+
+### 6. Prometheus Monitoring Targets (100% UP)
 Active health checks scraping microservice telemetry endpoints at `/metrics`.
 
 ![Prometheus Targets](docs/screenshots/prometheus_targets.png)
 
-### 5. Grafana Real-Time Observability Dashboard
+### 7. Grafana Real-Time Observability Dashboard
 Live metrics dashboard rendering FastAPI HTTP request throughput (RPS), p95 response latencies, and service telemetry.
 
 ![Grafana Dashboard](docs/screenshots/grafana_dashboard.png)
+
 
 ---
 
